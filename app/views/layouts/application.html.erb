@@ -13,7 +13,21 @@
   </head>
 
   <body>
+    <%# headerの表示 %>
     <%= render 'partial/header' %>
+
+    <%# deviseのアラート表示 %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
