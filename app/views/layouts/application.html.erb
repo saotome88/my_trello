@@ -13,8 +13,8 @@
   </head>
 
   <body>
-    <%# headerの表示 %>
-    <%= render 'partial/header' %>
+    <%# headerの表示,サインインしていないユーザーには表示しない %>
+    <%= render 'partial/header' if current_user %>
 
     <%# deviseのアラート表示 %>
     <% if flash[:notice] %>
