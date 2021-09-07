@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   
   root 'tops#index'
-  resources :lists, only:[:new, :create]
+  resources :lists, only:[:new, :create, :edit, :update]
 end
