@@ -17,12 +17,16 @@ class ListsController < ApplicationController
   end
 
   def update
-
     if @list.update_attributes(list_params)
       redirect_to :root
     else
       render action: :new
     end
+  end
+
+  def destroy
+    @list.destroy
+    redirect_to :root
   end
 
   private
