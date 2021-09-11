@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:edit, :update, :destroy]
+  before_action :set_list, only: [:edit, :update]
 
   def new
     @list = List.new
@@ -26,7 +26,8 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list.destroy
+    list = List.find_by(id: params[:id])
+    list.destroy
     redirect_to :root
   end
 
