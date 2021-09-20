@@ -14,12 +14,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.new(card_params)
-    if @card.save
-      redirect_to :root
-    else
-      render action: :new
-    end
+    @card = Card.find_by(id: params[:id])
   end
 
   private
